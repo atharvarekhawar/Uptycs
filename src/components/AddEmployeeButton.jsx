@@ -6,6 +6,7 @@ import axios from "axios";
 
 const AddEmployeeButton = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [requestSent, setRequestSent] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     designation: "",
@@ -28,12 +29,16 @@ const AddEmployeeButton = () => {
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
+    setRequestSent(true);
     const newEmployee = {
       id: uuidv4(),
       ...formData,
     };
 
-    await axios.post("https://uptycs-server.onrender.com/employees", newEmployee);
+    await axios.post(
+      `https://uptycs-server.onrender.com/employees`,
+      newEmployee
+    );
 
     setFormData({
       name: "",
@@ -45,6 +50,7 @@ const AddEmployeeButton = () => {
       phoneNumber: "",
     });
     window.location.reload();
+    setRequestSent(false);
     setIsOpen(false);
   };
 
@@ -197,6 +203,7 @@ const AddEmployeeButton = () => {
                 <button
                   type="submit"
                   className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                  disabled={requestSent ? true : false}
                 >
                   Save Employee
                 </button>

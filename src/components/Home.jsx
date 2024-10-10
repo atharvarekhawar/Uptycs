@@ -7,33 +7,29 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
+import EmployeeDetails from "./EmployeeDetailsPage";
+
+import { TiPencil } from "react-icons/ti";
+
 import axios from "axios";
 
 import AddEmployeeButton from "./AddEmployeeButton";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [data, setData] = useState([]);
   const [tableData, setTableData] = useState([]);
   const [departmentFilter, setDepartmentFilter] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-
-  const navigate = useNavigate();
+  const [employeeDetailsOpen, setEmployeeDetailsOpen] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
-      const res = await axios.get("https://uptycs-server.onrender.com/employees");
+      const res = await axios.get(`https://uptycs-server.onrender.com/employees`);
       let employeeTableData = [];
 
       for (const e of res.data) {
-        employeeTableData.push({
-          employeeId: e.id,
-          employeeName: e.name,
-          employeeDesignation: e.designation,
-          employeeDepartment: e.department,
-          employeeJoiningData: e.joiningDate,
-        });
+        employeeTableData.push({ ...e });
       }
 
       setData(employeeTableData);
@@ -48,11 +44,11 @@ export default function Home() {
       setTableData(data);
       return;
     }
-    if (departmentFilter == "") {
+    if (departmentFilter === "") {
       const filteredData = data.filter((employee) => {
-        const employeeName = employee.employeeName.toLowerCase();
-        const employeeDepartment = employee.employeeDepartment.toLowerCase();
-        const employeeDesignation = employee.employeeDesignation.toLowerCase();
+        const employeeName = employee.name.toLowerCase();
+        const employeeDepartment = employee.department.toLowerCase();
+        const employeeDesignation = employee.designation.toLowerCase();
 
         return (
           employeeName.includes(searchQuery.toLowerCase()) ||
@@ -66,35 +62,35 @@ export default function Home() {
 
     if (searchQuery === "") {
       const filteredData = data.filter(
-        (employee) => employee.employeeDepartment == departmentFilter
+        (employee) => employee.department == departmentFilter
       );
       setTableData(filteredData);
       return;
     }
 
     const filteredData = data.filter((employee) => {
-      const employeeName = employee.employeeName.toLowerCase();
-      const employeeDepartment = employee.employeeDepartment.toLowerCase();
-      const employeeDesignation = employee.employeeDesignation.toLowerCase();
+      const employeeName = employee.name.toLowerCase();
+      const employeeDepartment = employee.department.toLowerCase();
+      const employeeDesignation = employee.designation.toLowerCase();
 
       return (
         (employeeName.includes(searchQuery.toLowerCase()) ||
           employeeDepartment.includes(searchQuery.toLowerCase()) ||
           employeeDesignation.includes(searchQuery.toLowerCase())) &&
-        employee.employeeDepartment === departmentFilter
+        employee.department === departmentFilter
       );
     });
     setTableData(filteredData);
     return;
-  }, [searchQuery,departmentFilter]);
+  }, [searchQuery, departmentFilter]);
 
   const handleSearchQuery = (e) => {
     setSearchQuery(e.target.value);
   };
 
   return (
-    <>
-      <div className="w-full flex justify-between">
+    <div className="w-full min-h-screen">
+      <div className="w-full flex flex-col sm:flex-row items-center justify-between">
         <AddEmployeeButton />
         <div className="w-1/3 flex justify-center items-center">
           <input
@@ -126,49 +122,69 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Employee ID</TableCell>
-              <TableCell align="center">Name</TableCell>
-              <TableCell align="center">Designation</TableCell>
-              <TableCell align="center">Department</TableCell>
-              <TableCell align="center">Joining Date</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {tableData.map((employee) => (
-              <TableRow
-                key={employee.employeeId}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {employee.employeeId}
+      {tableData.length > 0 ? (
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell className="bg-slate-400">
+                  <p className="font-bold text-md">Employee ID</p>
                 </TableCell>
-                <TableCell
-                  align="center"
-                  className="cursor-pointer"
-                  onClick={() => {
-                    navigate(`/${employee.employeeId}`);
-                  }}
-                >
-                  {employee.employeeName}
+                <TableCell align="center" className="bg-slate-400">
+                  <p className="font-bold text-md"> Name</p>
                 </TableCell>
-                <TableCell align="center">
-                  {employee.employeeDesignation}
+                <TableCell align="center" className="bg-slate-400">
+                  <p className="font-bold text-md">Designation</p>
                 </TableCell>
-                <TableCell align="center">
-                  {employee.employeeDepartment}
+                <TableCell align="center" className="bg-slate-400">
+                  <p className="font-bold text-md">Department</p>
                 </TableCell>
-                <TableCell align="center">
-                  {employee.employeeJoiningData}
+                <TableCell align="center" className="bg-slate-400">
+                  <p className="font-bold text-md">Joining Date</p>
                 </TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </>
+            </TableHead>
+            <TableBody>
+              {tableData.map((employee) => (
+                <TableRow
+                  key={employee.id}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <TableCell component="th" scope="row">
+                    {employee.id}
+                  </TableCell>
+                  <TableCell
+                    align="center"
+                    className="cursor-pointer"
+                    onClick={() => {
+                      localStorage.setItem(
+                        "user",
+                        JSON.stringify({ ...employee })
+                      );
+                      setEmployeeDetailsOpen(true);
+                    }}
+                  >
+                    <div className="flex gap-1 justify-center  items-center">
+                      <TiPencil width={24}  />
+                      {employee.name}
+                    </div>
+                  </TableCell>
+                  <TableCell align="center">{employee.designation}</TableCell>
+                  <TableCell align="center">{employee.department}</TableCell>
+                  <TableCell align="center">{employee.joiningDate}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      ) : (
+        <div className=" h-screen flex justify-center items-center">
+          <p className="text-lg font-bold">No results found!</p>
+        </div>
+      )}
+      {employeeDetailsOpen && (
+        <EmployeeDetails setEmployeeDetailsOpen={setEmployeeDetailsOpen} />
+      )}
+    </div>
   );
 }

@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
-import EmployeeDetailsPage from './components/EmployeeDetailsPage'
 import './index.css'
 
 function App() {
@@ -8,7 +7,6 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:employeeId" element={<EmployeeDetailsPage/>}/>
       </Routes>
     </>
   )
