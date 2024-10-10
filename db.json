@@ -1,0 +1,34 @@
+{
+  "employees": [
+    {
+      "id": "b8af1f86-95f8-46cf-a317-7b5986757872",
+      "name": "Atharva Rekhawar",
+      "designation": "Software Developer",
+      "department": "Engineering",
+      "joiningDate": "2024-10-08",
+      "salary": "1231425353",
+      "email": "a67602099@gmail.com",
+      "phoneNumber": "9359624827"
+    },
+    {
+      "id": "34d02a2c-7bec-446c-a2ef-1baf41db4bc4",
+      "name": "Neeraj Jha",
+      "designation": "Software Developer",
+      "department": "Engineering",
+      "joiningDate": "2024-10-23",
+      "salary": "2134567",
+      "email": "ef@gmail.com",
+      "phoneNumber": "+91 93596 24827"
+    },
+    {
+      "id": "f178494a-06d0-47fc-a3d0-ff8c27cef30d",
+      "name": "Garden",
+      "designation": "Software Developer",
+      "department": "Engineering",
+      "joiningDate": "2024-12-12",
+      "salary": "12323",
+      "email": "a67602099@gmail.com",
+      "phoneNumber": "+91 93596 24827"
+    }
+  ]
+}
