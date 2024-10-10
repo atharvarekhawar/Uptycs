@@ -243,13 +243,13 @@ const EmployeeDetails = () => {
 
             <div className="w-full flex gap-2 justify-around mt-3">
               <div
-                className="bg-red-600 p-2 rounded-md text-white cursor-pointer "
+                className="w-20 bg-red-600 p-2 rounded-md text-white cursor-pointer text-center "
                 onClick={HandleDelete}
               >
                 Yes
               </div>
               <div
-                className="bg-emerald-600 p-2 rounded-md text-white cursor-pointer "
+                className=" w-20 bg-emerald-600 p-2 rounded-md text-white cursor-pointer text-center "
                 onClick={() => setConfirmDelete(false)}
               >
                 No

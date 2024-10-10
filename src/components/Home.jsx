@@ -13,8 +13,6 @@ import AddEmployeeButton from "./AddEmployeeButton";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { IoFilterSharp } from "react-icons/io5";
-
 export default function Home() {
   const [data, setData] = useState([]);
   const [tableData, setTableData] = useState([]);
@@ -107,9 +105,8 @@ export default function Home() {
             className="border border-gray-300 rounded-md px-3 py-2"
           />
         </div>
-        <div className="w-1/3 relative flex gap-3 justify-center items-center ">
-          <IoFilterSharp className="cursor-pointer" width={24} />
-          <div className=" mt-2">
+        <div className="w-1/3 flex gap-4 justify-center items-center ">
+          <div className="w-fit text-sm mt-2">
             <select
               id="department"
               name="department"
@@ -119,7 +116,7 @@ export default function Home() {
               }}
               className="w-full border border-gray-300 rounded-md px-3 py-2 cursor-pointer"
             >
-              <option value="">Select department</option>
+              <option value="">Filter by department</option>
               <option value="Engineering">Engineering</option>
               <option value="Marketing">Marketing</option>
               <option value="Sales">Sales</option>

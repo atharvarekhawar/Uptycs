@@ -18,12 +18,12 @@ const AddEmployeeButton = () => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-      setFormData((prevState) => {
-          return {
-              ...prevState,
-              [name]: value
-          }
-      });
+    setFormData((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
   };
 
   const HandleSubmit = async (e) => {
@@ -49,7 +49,7 @@ const AddEmployeeButton = () => {
   };
 
   return (
-    <div className="w-1/3">
+    <div className="w-1/3 flex justify-center items-center">
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="relative bg-white rounded-md shadow-lg p-6 w-96">
