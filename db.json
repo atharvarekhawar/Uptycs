@@ -1,34 +1,144 @@
 {
   "employees": [
     {
-      "id": "b8af1f86-95f8-46cf-a317-7b5986757872",
+      "id": "a323facb-3473-4106-9762-29400ff9284e",
       "name": "Atharva Rekhawar",
       "designation": "Software Developer",
       "department": "Engineering",
-      "joiningDate": "2024-10-08",
-      "salary": "1231425353",
-      "email": "a67602099@gmail.com",
+      "joiningDate": "2025-01-01",
+      "salary": "20000",
+      "email": "atharvarekhawar64@gmail.com",
       "phoneNumber": "9359624827"
     },
     {
-      "id": "34d02a2c-7bec-446c-a2ef-1baf41db4bc4",
-      "name": "Neeraj Jha",
-      "designation": "Software Developer",
-      "department": "Engineering",
-      "joiningDate": "2024-10-23",
-      "salary": "2134567",
-      "email": "ef@gmail.com",
-      "phoneNumber": "+91 93596 24827"
+      "id": "5edef84a-219e-4aba-a61b-eb77a2140a2b",
+      "name": "Gregory Wilson",
+      "designation": "Chartered management accountant",
+      "department": "Finance",
+      "joiningDate": "2021-09-18",
+      "salary": "99567",
+      "email": "wmarsh@hotmail.com",
+      "phoneNumber": "001-420-558-2177x35062"
     },
     {
-      "id": "f178494a-06d0-47fc-a3d0-ff8c27cef30d",
-      "name": "Garden",
-      "designation": "Software Developer",
+      "id": "04029b3e-a2ac-418e-a046-30358c8d6f1f",
+      "name": "Linda Alexander",
+      "designation": "Production assistant, television",
+      "department": "Marketing",
+      "joiningDate": "2020-12-04",
+      "salary": "86748",
+      "email": "jameskelly@perez-ferrell.com",
+      "phoneNumber": "001-627-988-3473x75514"
+    },
+    {
+      "id": "abc1bd75-9196-4b44-9508-917af9464f93",
+      "name": "David Cole",
+      "designation": "Interior and spatial designer",
+      "department": "Finance",
+      "joiningDate": "2019-12-22",
+      "salary": "93988",
+      "email": "brownrodney@myers.com",
+      "phoneNumber": "(768)988-9233"
+    },
+    {
+      "id": "fedf1228-3f5a-43f1-98a6-d1d5e9b5f5ad",
+      "name": "Michael Miller",
+      "designation": "Hydrologist",
+      "department": "Marketing",
+      "joiningDate": "2020-04-29",
+      "salary": "64131",
+      "email": "dianeharris@yahoo.com",
+      "phoneNumber": "+1-772-410-8028x11140"
+    },
+    {
+      "id": "9e3f5989-0c6f-4969-a7b8-31d1f1f1cd3d",
+      "name": "Melanie Thomas",
+      "designation": "Information officer",
       "department": "Engineering",
-      "joiningDate": "2024-12-12",
-      "salary": "12323",
-      "email": "a67602099@gmail.com",
-      "phoneNumber": "+91 93596 24827"
+      "joiningDate": "2023-07-03",
+      "salary": "81531",
+      "email": "colewright@farrell.com",
+      "phoneNumber": "811-465-2760x344"
+    },
+    {
+      "id": "094fc30e-0bdd-49b8-8dca-7d6f496b653d",
+      "name": "Noah Holland",
+      "designation": "Education officer, community",
+      "department": "Sales",
+      "joiningDate": "2022-11-26",
+      "salary": "118686",
+      "email": "dwilliams@gmail.com",
+      "phoneNumber": "001-222-204-7230x777"
+    },
+    {
+      "id": "970f87a0-915a-4cef-b45a-c5c031bb72d1",
+      "name": "Jennifer Schmidt",
+      "designation": "Engineer, biomedical",
+      "department": "Engineering",
+      "joiningDate": "2020-06-08",
+      "salary": "82210",
+      "email": "hhoffman@hotmail.com",
+      "phoneNumber": "(613)686-3586"
+    },
+    {
+      "id": "4077f834-49f8-4dca-b140-4418984d5f4f",
+      "name": "Mary Hardin",
+      "designation": "Sports development officer",
+      "department": "Finance",
+      "joiningDate": "2019-10-31",
+      "salary": "90468",
+      "email": "gnewton@gmail.com",
+      "phoneNumber": "+1-860-724-0392x54632"
+    },
+    {
+      "id": "4bfcecca-362e-460c-9e4a-cc3c41338884",
+      "name": "Ian Franklin",
+      "designation": "Retail banker",
+      "department": "Engineering",
+      "joiningDate": "2020-09-06",
+      "salary": "71744",
+      "email": "andersonamy@gmail.com",
+      "phoneNumber": "001-267-894-4428x960"
+    },
+    {
+      "id": "321096cd-98be-40f7-b9c0-6aaacf5edaa9",
+      "name": "Patricia Taylor",
+      "designation": "Research scientist (medical)",
+      "department": "Marketing",
+      "joiningDate": "2020-08-10",
+      "salary": "60392",
+      "email": "navarrorobert@yahoo.com",
+      "phoneNumber": "(117)831-1201x679"
+    },
+    {
+      "id": "a4231144-3b02-486c-8c02-b9e1486113d4",
+      "name": "Randy Price PhD",
+      "designation": "Newspaper journalist",
+      "department": "Human Resources",
+      "joiningDate": "2024-07-15",
+      "salary": "100598",
+      "email": "qjackson@gmail.com",
+      "phoneNumber": "144.647.6531"
+    },
+    {
+      "id": "20592202-cf1d-463c-9611-4361e9446b25",
+      "name": "Tiffany Morrison",
+      "designation": "Surveyor, rural practice",
+      "department": "Human Resources",
+      "joiningDate": "2021-12-25",
+      "salary": "112164",
+      "email": "garciaalexis@sweeney-perez.net",
+      "phoneNumber": "(317)908-2529x5455"
+    },
+    {
+      "id": "82598a0a-b150-47a3-b997-deeeb46070e8",
+      "name": "Mary White",
+      "designation": "Media buyer",
+      "department": "Human Resources",
+      "joiningDate": "2020-06-15",
+      "salary": "87114",
+      "email": "davidshelton@edwards.com",
+      "phoneNumber": "1006849493"
     }
   ]
 }

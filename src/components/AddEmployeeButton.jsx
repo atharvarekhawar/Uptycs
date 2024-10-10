@@ -49,7 +49,7 @@ const AddEmployeeButton = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-1/3">
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="relative bg-white rounded-md shadow-lg p-6 w-96">
@@ -206,9 +206,8 @@ const AddEmployeeButton = () => {
         </div>
       )}
 
-      {/* Add Employee Button */}
       <button
-        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+        className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 m-2"
         onClick={() => setIsOpen(true)}
       >
         Add Employee
