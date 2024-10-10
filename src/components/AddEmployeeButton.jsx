@@ -33,7 +33,7 @@ const AddEmployeeButton = () => {
       ...formData,
     };
 
-    await axios.post("http://localhost:3000/employees", newEmployee);
+    await axios.post("https://uptycs-server.onrender.com/employees", newEmployee);
 
     setFormData({
       name: "",

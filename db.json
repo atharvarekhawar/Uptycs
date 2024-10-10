@@ -139,6 +139,16 @@
       "salary": "87114",
       "email": "davidshelton@edwards.com",
       "phoneNumber": "1006849493"
+    },
+    {
+      "id": "4e03107c-2241-4320-8b35-061701452777",
+      "name": "Production",
+      "designation": "Software Developer",
+      "department": "Marketing",
+      "joiningDate": "2024-10-05",
+      "salary": "123456780",
+      "email": "a@gmail.com",
+      "phoneNumber": "(117)831-1201x679"
     }
   ]
 }

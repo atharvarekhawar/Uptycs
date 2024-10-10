@@ -24,7 +24,7 @@ const EmployeeDetails = () => {
   useEffect(() => {
     async function fetchData() {
       const res = await axios.get(
-        `http://localhost:3000/employees/${employeeId}`
+        `https://uptycs-server.onrender.com/employees/${employeeId}`
       );
       setFormData({ ...res.data });
       setOriginalData({ ...res.data });
@@ -49,7 +49,7 @@ const EmployeeDetails = () => {
     };
 
     await axios.put(
-      `http://localhost:3000/employees/${employeeId}`,
+      `https://uptycs-server.onrender.com/employees/${employeeId}`,
       newEmployee
     );
 
@@ -68,7 +68,7 @@ const EmployeeDetails = () => {
 
   const HandleDelete = async () => {
       try {
-        await axios.delete(`http://localhost:3000/employees/${employeeId}`);
+        await axios.delete(`https://uptycs-server.onrender.com/employees/${employeeId}`);
         navigate('/');
       } catch (error) {
         console.error("Error deleting employee:", error);

@@ -23,7 +23,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await axios.get("http://localhost:3000/employees");
+      const res = await axios.get("https://uptycs-server.onrender.com/employees");
       let employeeTableData = [];
 
       for (const e of res.data) {
