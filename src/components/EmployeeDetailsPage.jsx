@@ -41,7 +41,7 @@ const EmployeeDetails = ({ setEmployeeDetailsOpen }) => {
     };
 
     await axios.put(
-      `http://13.201.1.139:8000/employees/${user.id}`,
+      `http://1localhost:8000/employees/${user.id}`,
       newEmployee
     );
 
@@ -64,7 +64,7 @@ const EmployeeDetails = ({ setEmployeeDetailsOpen }) => {
     try {
       setRequestSent(true);
       await axios.delete(
-        `http://13.201.1.139:8000/employees/${user.id}`
+        `http://localhost:8000/employees/${user.id}`
       );
 
       setRequestSent(false);

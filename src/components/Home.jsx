@@ -25,7 +25,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await axios.get('http://13.201.1.139:8000/employees');
+      const res = await axios.get('http://localhost:8000/employees');
       let employeeTableData = [];
 
       for (const e of res.data) {

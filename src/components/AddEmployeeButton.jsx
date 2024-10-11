@@ -36,7 +36,7 @@ const AddEmployeeButton = () => {
     };
 
     await axios.post(
-      'http://13.201.1.139:8000/employees',
+      'http://localhost:8000/employees',
       newEmployee
     );
 
