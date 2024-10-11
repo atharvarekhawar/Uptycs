@@ -41,7 +41,7 @@ const EmployeeDetails = ({ setEmployeeDetailsOpen }) => {
     };
 
     await axios.put(
-      'http://13.201.1.139:8000/employees/${user.id}',
+      `http://13.201.1.139:8000/employees/${user.id}`,
       newEmployee
     );
 
@@ -57,16 +57,20 @@ const EmployeeDetails = ({ setEmployeeDetailsOpen }) => {
 
     setRequestSent(false);
     setEmployeeDetailsOpen(false);
+    window.location.reload()
   };
 
   const HandleDelete = async () => {
     try {
       setRequestSent(true);
       await axios.delete(
-        'http://13.201.1.139:8000/employees/${user.id}'
+        `http://13.201.1.139:8000/employees/${user.id}`
       );
+
       setRequestSent(false);
       setEmployeeDetailsOpen(false);
+      window.location.reload()
+      
     } catch (error) {
       console.error("Error deleting employee:", error);
     }
