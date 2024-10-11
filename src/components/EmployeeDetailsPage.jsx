@@ -41,7 +41,7 @@ const EmployeeDetails = ({ setEmployeeDetailsOpen }) => {
     };
 
     await axios.put(
-      `http://1localhost:3000/employees/${user.id}`,
+      `http://localhost:3000/employees/${user.id}`,
       newEmployee
     );
 
