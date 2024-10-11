@@ -41,7 +41,7 @@ const EmployeeDetails = ({ setEmployeeDetailsOpen }) => {
     };
 
     await axios.put(
-      `https://uptycs-server.onrender.com/employees/${user.id}`,
+      'http://13.201.1.139:8000/employees/${user.id}',
       newEmployee
     );
 
@@ -63,7 +63,7 @@ const EmployeeDetails = ({ setEmployeeDetailsOpen }) => {
     try {
       setRequestSent(true);
       await axios.delete(
-        `https://uptycs-server.onrender.com/employees/${user.id}`
+        'http://13.201.1.139:8000/employees/${user.id}'
       );
       setRequestSent(false);
       setEmployeeDetailsOpen(false);

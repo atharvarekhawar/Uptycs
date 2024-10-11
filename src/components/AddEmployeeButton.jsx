@@ -36,7 +36,7 @@ const AddEmployeeButton = () => {
     };
 
     await axios.post(
-      `https://uptycs-server.onrender.com/employees`,
+      'http://13.201.1.139:8000/employees',
       newEmployee
     );
 
